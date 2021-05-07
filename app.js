@@ -16,9 +16,11 @@ lookUpUser.addEventListener('keyup', (e) => {
             .then(data => {
                 if (data.profileData.message === 'Not Found') {
                     // Show Alert
+                    ui.showAlert('User not Found', 'alert alert-danger');
                 } else {
                     // Show Profile
                     ui.showProfile(data.profileData)
+                    ui.showRepos(data.reposData)
                 }
             })
     } else {
